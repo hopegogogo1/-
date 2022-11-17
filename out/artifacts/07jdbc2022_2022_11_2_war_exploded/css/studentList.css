@@ -1,0 +1,181 @@
+html{
+	font-size: 16px;
+	margin: 0;
+}
+body{
+	margin: 0;
+}
+
+/* div及其下所有元素都为flex布局 */
+.main-div, .main-div *{
+	display: flex;
+}
+/* 主工作区,包括head-div和body-div */
+.main-div {
+	/* 垂直排列 */
+	flex-direction: column;
+	/* 左对齐 */
+	justify-content: flex-start;
+}
+/* 头部主要放置操作按钮、筛选条件、统计信息等 */
+.head-div {
+	padding: 0.75rem 2rem;
+	flex-wrap: wrap;
+	box-shadow: 0.25rem 0.25rem 0.5rem #DDDDDD;
+	justify-content: space-between;
+}
+/* 头部按钮样式：内外边距、边框及边框圆角 */
+.head-div button,.head-div input {
+	margin: 0.25rem;
+	padding: 0.25rem 0.5rem;
+	border: 0 #fff;
+	border-radius: 0.25rem;
+	font-size: 0.9rem;
+}
+/* 按钮点击后样式：外部轮廓样式 */
+button:focus {
+	outline: #eeffff solid 0.1rem;
+}
+/* 头部按钮鼠标指针浮动之上：鼠标指针样式、按钮变大 */
+.head-div button:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+/* 亮蓝色背景 */
+.light-blue {
+	background-color: #cceeff;
+}
+/* 红色样式：
+    红色系背景、强红色系边框、弱红色系阴影
+	亮白色字体、字体加粗 */
+.danger {
+	background-color: #ee8877;
+	border-color: #ff5555;
+	box-shadow: 0 0 0.2rem 0.1rem #ffcccc;
+	color: #eee;
+	font-weight: 600;
+}
+/* 绿色样式：
+    绿色系背景、强绿色系边框、弱绿色系阴影
+	偏黑色字体、字体加粗 */
+.success {
+	background-color: #55ee99;
+	border-color: #66ff55;
+	box-shadow: 0 0 0.2rem 0.1rem #aaee99;
+	color: #555;
+	font-weight: 600;
+}
+/* 黄色样式：
+    黄色系背景、强黄色系边框、弱黄色系阴影
+	偏黑色字体、字体加粗 */
+.warning {
+	background-color: #eeff33;
+	border-color: #ddee22;
+	box-shadow: 0 0 0.2rem 0.1rem #dddd44;
+	color: #555;
+	font-weight: 600;
+}
+/* 学生列表布局样式：
+	水平排列（默认）
+	可换行
+	主轴开始方向对齐（水平向左对齐）
+*/
+#msgList-ul {
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+/* 学生信息卡片样式 */
+#msgList-ul>li {
+	/* 内部元素垂直排列 */
+	flex-direction: column;
+	/* 卡片大小及内外边距 */
+	min-width: 10rem;
+	padding: 0.5rem;
+	margin: 1rem 1rem;
+	/* 圆角 */
+	border-radius: 0.5rem;
+	/* 阴影 */
+	box-shadow: 0.5rem 0.5rem 0.5rem #aaa;
+	/* 动画过渡方式设置 */
+	transition: all 0.5s;
+}
+/* 鼠标指向卡片时样式：鼠标指针、变大1.1倍 */
+#msgList-ul>li:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+/* 男生卡片样式：背景淡蓝色、边框深蓝色 */
+.male {
+	background-color: #aaccff;
+	border: #77aaff 0.1rem solid;
+}
+/* 女生卡片样式：背景淡粉色、边框深粉色 */
+.female {
+	background-color: #ffccdd;
+	border: #ffaadd 0.1rem solid;
+}
+/* 卡片中的图片样式 */
+.img{
+	/* 宽度固定、高度自动 */
+	width: 10rem;
+	height: auto;
+	/* 白色边框、边框圆角 */
+	border: #fff 0.1rem solid;
+	border-radius: 0.25rem;
+	/* 灰色阴影 */
+	box-shadow: 0 0 0.1rem 0.1rem #eee;
+}
+/* 学生卡片中学生信息div样式：内部元素垂直排列 */
+.msg-span-div{
+	flex-direction: column;
+}
+/* 生信息div中span子元素样式：外边距及字体颜色深灰 */
+.msg-span-div>span {
+	margin: 0.2rem 0.25rem;
+	color: #333;
+}
+/* 姓名span样式：字体加粗、和性别同一行2个单位宽度 */
+.name-span {
+	font-weight: 700;
+	flex: 2;
+}
+/* 性别span样式：和姓名同一行1个单位宽度 */
+.sex-span {
+	flex: 1;
+}
+/* 系部span样式：字体缩小0.8 */
+.depart-span {
+	font-size: 0.8rem;
+	flex: 2;
+}
+/*专业span样式，字体缩小0.8*/
+.spec-span{
+	font-size: 0.8rem;
+	flex: 1;
+}
+/* 各个兴趣爱好样式 */
+.like-span>span {
+	/* 内外边距 */
+	margin: 0rem 0.1rem;
+	padding: 0.1rem 0.25rem;
+	/* 圆角 */
+	border-radius: 0.25rem;
+	/* 字体缩小0.9、字体加粗 */
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+/* 女生兴趣爱好样式：背景颜色红色、字体颜色亮粉 */
+.female .like-span>span {
+	background-color: #ff8844;
+	color: #fdd;
+}
+/* 男生兴趣爱好样式：背景颜色蓝色、字体颜色亮蓝 */
+.male .like-span>span {
+	background-color: #4488ff;
+	color: #dff;
+}
+/* 被选中的活动卡片的样式：淡蓝色阴影、卡片放大1.1倍 */
+#msgList-ul>li.active-li{
+	box-shadow: 0.4rem 0.4rem 0.5rem #afa;
+	transform: scale(1.1);
+}

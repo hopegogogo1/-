@@ -1,0 +1,26 @@
+html,body{
+	height: 100%;
+	width:100%;
+	padding:0;
+	margin: 0;
+	background-color: #A5DFFA;
+}
+#error-message-div{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+#error-message-div>*{
+	width:100%;
+	text-align: center;
+}
+#error-message-div>.message-div{
+	background-color: #ff8888;
+	color: #fff;
+	font-weight: 600;
+	font-size: 2rem;
+	padding: 0.5rem 0;
+}
+

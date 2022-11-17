@@ -1,0 +1,116 @@
+/* 
+    模态框遮罩层样式：
+    背景颜色灰色、半透明
+	位置固定、从父组件（窗口）左上角开始，占满整个父组件
+	弹性盒子布局，且内部子元素水平垂直居中
+*/
+.modal-div {
+	background-color: #555;
+	opacity: 0.5;
+	position: fixed;
+	left: 0rem;
+	top: 0rem;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+	padding: auto;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s linear 0.1s;
+}
+.modal-div.fade-out{
+	opacity: 0;
+	transition: all 0.5s linear 0.5s;
+}
+.modal-div.fade-in{
+	opacity: 0.9;
+}
+/*模态框中表单及表单中的元素都为flex布局*/
+form,form * {
+	display: flex;
+}
+/*模态框中表单样式*/
+form{
+	/*主轴（水平）居中对齐*/
+	justify-content: center;
+	height: min-content;
+	/*过渡效果：作用属性、持续时长、过渡时效、延时开始时长 */
+	transition: all 0.5s ease-out 0.5s;
+	transform: scale(3.1);
+}
+/*结合form中属性，从3.1变为1
+，实现由3倍大到正常大小的进入动画*/
+.fade-in form {
+	transform: scale(1);
+}
+/*结合form .fade-in中属性，从1变为0.1
+，实现由正常大小到缩小为0.1的移出动画*/
+.fade-out form {
+	transform: scale(0.1);
+	transition: all 0.5s ease-in 0.1s;
+}
+#form-div {
+	flex-direction: column;
+	width: 25rem;
+	background-color: #ffe4ce;
+	margin: 1rem 0.5rem;
+	padding: 0.5rem;
+	border: #ff7777 0.1rem solid;
+	border-radius: 0.5rem;
+	box-shadow: 0.5rem 0.5rem 0.5rem darkgray;
+	position: relative;
+}
+#form-div>div {
+	margin: 0.25rem;
+	justify-content: space-around;
+}
+#form-div>div>label {
+	flex: 1;
+	justify-content: flex-end;
+	align-items: center;
+}
+#form-div>div>div{
+	flex: 2;
+}
+#form-div>div>div:last-child>label {
+	flex: 1;
+}
+[type="text"],select,textarea {
+	border: #ff7777 0.1rem solid;
+	border-radius: 0.25rem;
+}
+input+span{
+	padding: 0rem 0.25rem;
+	border-radius: 0.1rem;
+}
+input:checked+span{
+	background-color: #4488ff;
+}
+#submit-button,#cancel-button{
+	background-color: #ff9999;
+	color: aliceblue;
+	font-weight: 700;
+	padding: 0.25rem 1rem;
+	border: #ff4444 1px solid;
+	border-radius: 0.25rem;
+	cursor: pointer;
+}
+#submit-button:hover,#cancel-button:hover{
+	background-color: #ff4444;
+	border: #ff9999 0.1rem solid;
+	box-shadow: 0.2rem 0.2rem 0.2rem #dddddd;
+	transform: scale(1.1);
+}
+.modal-close-btn {
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	font-size: 1.6rem;
+	border-radius: 1rem;
+	position: absolute;
+	top: -1rem;
+	right: -1rem;
+	cursor: pointer;
+}
+
+
